@@ -1,0 +1,131 @@
+# Music Engines Configuration for SearXNG-Cool
+# WARNING: Keep API keys secure - do not commit this file with real keys
+
+engines:
+  discogs:
+    enabled: true
+    api_token: "${DISCOGS_API_TOKEN}"
+    rate_limit: 60
+    rate_period: 60  # seconds
+    cache_ttl: 86400  # 24 hours
+    timeout: 10
+    base_url: "https://api.discogs.com"
+    user_agent: "SearXNG-Cool/1.0 +https://github.com/Camier/searxng-cool"
+    
+  jamendo:
+    enabled: true
+    api_key: "${JAMENDO_API_KEY}"
+    rate_limit: 100
+    rate_period: 60
+    cache_ttl: 3600  # 1 hour
+    timeout: 5
+    base_url: "https://api.jamendo.com/v3.0"
+    
+  soundcloud:
+    enabled: true
+    rate_limit: 30
+    rate_period: 60
+    cache_ttl: 3600
+    timeout: 8
+    
+  bandcamp:
+    enabled: true
+    rate_limit: 20
+    rate_period: 60
+    cache_ttl: 7200  # 2 hours
+    timeout: 10
+    
+  archive_audio:
+    enabled: true
+    rate_limit: 10
+    rate_period: 60
+    cache_ttl: 86400  # 24 hours
+    timeout: 15
+    base_url: "https://archive.org"
+    
+  mixcloud:
+    enabled: true
+    rate_limit: 30
+    rate_period: 60
+    cache_ttl: 3600
+    timeout: 8
+    
+  fma:
+    enabled: true
+    rate_limit: 20
+    rate_period: 60
+    cache_ttl: 7200
+    timeout: 10
+    
+  deezer:
+    enabled: true
+    rate_limit: 50
+    rate_period: 5
+    cache_ttl: 3600
+    timeout: 5
+    
+  genius:
+    enabled: true
+    rate_limit: 100
+    rate_period: 60
+    cache_ttl: 86400
+    timeout: 5
+    
+  radioparadise:
+    enabled: true
+    rate_limit: 10
+    rate_period: 60
+    cache_ttl: 300  # 5 minutes
+    timeout: 5
+    
+  youtube_music:
+    enabled: true
+    rate_limit: 100
+    rate_period: 60
+    cache_ttl: 3600
+    timeout: 10
+
+# Engine-specific features
+features:
+  deduplication: true
+  quality_scoring: true
+  parallel_search: true
+  max_parallel: 3
+  result_limit: 50
+  
+# Cache configuration
+cache:
+  backend: redis
+  host: localhost
+  port: 6379
+  db: 1
+  key_prefix: "searxng_music"
+  compression: true
+  
+# Fallback chains for different search types
+fallback_chains:
+  mainstream:
+    - deezer
+    - jamendo
+    - soundcloud
+  underground:
+    - soundcloud
+    - bandcamp
+    - mixcloud
+  vinyl:
+    - discogs
+    - bandcamp
+  free:
+    - jamendo
+    - archive_audio
+    - fma
+  lyrics:
+    - genius
+    - deezer
+    
+# Search enhancement
+search_enhancement:
+  natural_language: true
+  synonym_expansion: true
+  genre_normalization: true
+  year_extraction: true

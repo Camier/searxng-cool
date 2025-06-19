@@ -1,0 +1,31 @@
+[Unit]
+Description=SearXNG-Cool Production Orchestrator
+After=network.target redis.service postgresql.service
+Requires=redis.service
+
+[Service]
+Type=simple
+User=mik
+Group=mik
+WorkingDirectory=/home/mik/SEARXNG/searxng-cool
+Environment="PATH=/home/mik/SEARXNG/searxng-cool/venv/bin"
+Environment="PYTHONPATH=/home/mik/SEARXNG/searxng-cool"
+ExecStart=/home/mik/SEARXNG/searxng-cool/venv/bin/python3 /home/mik/SEARXNG/searxng-cool/orchestrator/app_production.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Production security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/home/mik/SEARXNG/searxng-cool
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=4096
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,49 @@
+# SearXNG settings
+
+use_default_settings: true
+
+general:
+  debug: true
+  instance_name: "SearXNG-Cool"
+
+search:
+  safe_search: 2
+  autocomplete: 'duckduckgo'
+  formats:
+    - html
+    - json
+
+server:
+  # Is overwritten by ${SEARXNG_SECRET}
+  secret_key: "35252cc1a9e34982a35fa65632c09f17"
+  port: 8888
+  bind_address: "0.0.0.0"
+  limiter: false
+  image_proxy: true
+  # public URL of the instance, to ensure correct inbound links. Is overwritten
+  # by ${SEARXNG_BASE_URL}.
+  base_url: http://localhost:8095
+
+redis:
+  # URL to connect redis database. Is overwritten by ${SEARXNG_REDIS_URL}.
+  url: redis://localhost:6380/2
+
+ui:
+  static_use_hash: true
+
+# preferences:
+#   lock:
+#     - autocomplete
+#     - method
+
+# engines:
+#
+#   - name: fdroid
+#     disabled: false
+#
+#   - name: apk mirror
+#     disabled: false
+#
+#   - name: mediathekviewweb
+#     categories: TV
+#     disabled: false
