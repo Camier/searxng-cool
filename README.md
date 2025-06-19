@@ -1,10 +1,10 @@
 # SearXNG-Cool Music Engines
 
-A collection of custom music search engines for SearXNG, providing comprehensive music discovery across multiple platforms.
+A focused collection of 27 custom music search engines for SearXNG, providing comprehensive music discovery across multiple platforms.
 
 ## Overview
 
-This repository contains 25+ custom music engines that extend SearXNG with specialized music search capabilities.
+This repository contains custom music engines that extend SearXNG with specialized music search capabilities. Originally part of a larger 12,000+ file project, this has been consolidated to just the essential custom engines for easier maintenance and deployment.
 
 ## Structure
 
@@ -28,15 +28,40 @@ python tests/test_all_music_engines.py
 
 ## Music Engines
 
-### Working Engines (15+)
+### All 27 Music Engines
+
+**Metadata & Information:**
 - Last.fm - Music metadata and artist information
-- MusicBrainz - Open music encyclopedia
+- MusicBrainz - Open music encyclopedia  
+- AllMusic - Music reviews and metadata
 - Discogs - Music database and marketplace
-- Jamendo - Free music platform
-- Bandcamp - Independent music platform
-- SoundCloud - Audio distribution platform
 - Genius - Song lyrics and annotations
-- And more...
+
+**Streaming & Discovery:**
+- Spotify Web - Music metadata (no playback)
+- Deezer - Music streaming service data
+- SoundCloud - Audio distribution platform
+- YouTube Music - Music videos and tracks
+- Apple Music Web - Music catalog data
+- Tidal Web - High-fidelity music data
+
+**Independent & Free Music:**
+- Bandcamp - Independent music platform
+- Jamendo - Free music platform
+- Free Music Archive - Open music library
+
+**Specialized Engines:**
+- Beatport - Electronic music
+- Mixcloud - DJ mixes and radio shows
+- Pitchfork - Music reviews
+- Radio Paradise - Curated radio
+- Musixmatch - Lyrics database
+
+**Enhanced Versions:**
+- Bandcamp Enhanced
+- SoundCloud Enhanced  
+- Mixcloud Enhanced
+- Genius Lyrics (focused version)
 
 ## Configuration
 
