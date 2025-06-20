@@ -16,8 +16,23 @@ from tabulate import tabulate
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# Database connection string
-DATABASE_URL = "postgresql://searxng_user:searxng_music_2024@/searxng_cool_music"
+# Database connection string from environment
+import os
+from urllib.parse import quote_plus
+
+# Build database URL from environment or use default
+if db_url := os.environ.get('DATABASE_URL'):
+    DATABASE_URL = db_url
+else:
+    user = os.environ.get('DB_USER', 'searxng_user')
+    password = os.environ.get('DB_PASSWORD', '')
+    if not password:
+        raise ValueError("DB_PASSWORD environment variable must be set")
+    password = quote_plus(password)
+    host = os.environ.get('DB_HOST', 'localhost')
+    port = os.environ.get('DB_PORT', '5432')
+    database = os.environ.get('DB_NAME', 'searxng_cool_music')
+    DATABASE_URL = f"postgresql://{user}:{password}@{host}:{port}/{database}"
 
 
 class DatabaseManager:

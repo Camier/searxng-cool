@@ -1,26 +1,66 @@
 # Orchestrator Configuration
 DATABASE:
-  SQLALCHEMY_DATABASE_URI: ${DATABASE_URL:-postgresql:///searxng_cool_music}
+  SQLALCHEMY_DATABASE_URI: ${DATABASE_URL:?Database URL is required}
   SQLALCHEMY_TRACK_MODIFICATIONS: false
+  SQLALCHEMY_ENGINE_OPTIONS:
+    pool_size: ${DATABASE_POOL_SIZE:-10}
+    max_overflow: ${DATABASE_MAX_OVERFLOW:-20}
+    pool_timeout: ${DATABASE_POOL_TIMEOUT:-30}
+    pool_recycle: 3600
 
 JWT:
-  JWT_SECRET_KEY: ${JWT_SECRET_KEY:-35252cc1a9e34982a35fa65632c09f17}
+  JWT_SECRET_KEY: ${JWT_SECRET_KEY:?JWT secret key is required for security}
   JWT_ACCESS_TOKEN_EXPIRES: ${JWT_ACCESS_TOKEN_EXPIRES:-3600}
+  JWT_REFRESH_TOKEN_EXPIRES: ${JWT_REFRESH_TOKEN_EXPIRES:-86400}
 
 REDIS:
-  REDIS_URL: 'redis://localhost:6379/0'
+  REDIS_URL: ${REDIS_URL:-redis://localhost:6379/0}
 
 SEARXNG:
-  CORE_URL: 'http://localhost:8888'
-  SETTINGS_PATH: '/home/mik/SEARXNG/searxng-cool/config/searxng-settings.yml'
+  CORE_URL: ${SEARXNG_CORE_URL:-http://localhost:8888}
+  SETTINGS_PATH: ${SEARXNG_SETTINGS_PATH:-/home/mik/SEARXNG/searxng-cool-restored/config/searxng-settings.yml}
 
 WEBSOCKET:
-  SOCKETIO_REDIS_URL: 'redis://localhost:6379/1'
+  SOCKETIO_REDIS_URL: ${SOCKETIO_REDIS_URL:-redis://localhost:6379/1}
 
 SERVER:
-  HOST: '0.0.0.0'
-  PORT: 8889
-  DEBUG: true
+  HOST: ${SERVER_HOST:-0.0.0.0}
+  PORT: ${SERVER_PORT:-8889}
+  DEBUG: ${DEBUG:-false}
 
 CORS:
-  ORIGINS: ['http://localhost:3000', 'http://localhost:8095']
+  ORIGINS: ${CORS_ORIGINS:-http://localhost:3000,http://localhost:8095}
+
+# API Keys Configuration
+API_KEYS:
+  LASTFM:
+    API_KEY: ${LASTFM_API_KEY:-}
+    API_SECRET: ${LASTFM_API_SECRET:-}
+  SPOTIFY:
+    CLIENT_ID: ${SPOTIFY_CLIENT_ID:-}
+    CLIENT_SECRET: ${SPOTIFY_CLIENT_SECRET:-}
+  DISCOGS:
+    TOKEN: ${DISCOGS_TOKEN:-}
+    USER_AGENT: ${DISCOGS_USER_AGENT:-SearXNG-Cool/1.0}
+  MUSICBRAINZ:
+    USER_AGENT: ${MUSICBRAINZ_USER_AGENT:-SearXNG-Cool/1.0}
+
+# Rate Limiting
+RATE_LIMITING:
+  DEFAULT: ${RATE_LIMIT_DEFAULT:-100 per hour}
+  PER_IP: ${RATE_LIMIT_PER_IP:-200 per hour}
+  STORAGE_URL: ${RATE_LIMIT_STORAGE_URL:-redis://localhost:6379/2}
+
+# Logging
+LOGGING:
+  LEVEL: ${LOG_LEVEL:-INFO}
+  FILE: ${LOG_FILE:-/var/log/searxng-cool/orchestrator.log}
+  MAX_SIZE: ${LOG_MAX_SIZE:-10485760}
+  BACKUP_COUNT: ${LOG_BACKUP_COUNT:-5}
+
+# Feature Flags
+FEATURES:
+  MUSIC_SEARCH: ${ENABLE_MUSIC_SEARCH:-true}
+  WEBSOCKET: ${ENABLE_WEBSOCKET:-true}
+  CACHING: ${ENABLE_CACHING:-true}
+  RATE_LIMITING: ${ENABLE_RATE_LIMITING:-true}

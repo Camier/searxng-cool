@@ -91,7 +91,24 @@ def downgrade() -> None:
 
 def analyze_database():
     """Analyze the current database state"""
-    engine = create_engine('postgresql://searxng_user:searxng_music_2024@/searxng_cool_music')
+    import os
+    from urllib.parse import quote_plus
+    
+    # Get database URL from environment
+    if db_url := os.environ.get('DATABASE_URL'):
+        engine = create_engine(db_url)
+    else:
+        user = os.environ.get('DB_USER', 'searxng_user')
+        password = os.environ.get('DB_PASSWORD', '')
+        if not password:
+            raise ValueError("DB_PASSWORD environment variable must be set")
+        password = quote_plus(password)
+        host = os.environ.get('DB_HOST', 'localhost')
+        port = os.environ.get('DB_PORT', '5432')
+        database = os.environ.get('DB_NAME', 'searxng_cool_music')
+        db_url = f"postgresql://{user}:{password}@{host}:{port}/{database}"
+        engine = create_engine(db_url)
+    
     inspector = inspect(engine)
     
     # Get all tables

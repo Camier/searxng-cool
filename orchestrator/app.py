@@ -17,10 +17,19 @@ from flask_socketio import SocketIO, emit
 import redis
 import requests
 from urllib.parse import urljoin
+from dotenv import load_dotenv
 
-# Configure logging
+# Load environment variables
+load_dotenv()
+
+# Import security configuration
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from config.security import security_config, apply_security_headers
+
+# Configure logging based on environment
+log_level = os.getenv('LOG_LEVEL', 'INFO')
 logging.basicConfig(
-    level=logging.INFO,
+    level=getattr(logging, log_level.upper()),
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
@@ -100,10 +109,15 @@ def create_app():
             'pool_size': 10,
             'max_overflow': 20
         }
-        # Production security settings
-        app.config['SECRET_KEY'] = config['JWT']['JWT_SECRET_KEY']
-        if not config['SERVER']['DEBUG']:
+        # Apply security configuration
+        app.config.update(security_config.get_flask_config())
+        
+        # Additional production settings
+        if security_config.is_production:
             app.config['PREFERRED_URL_SCHEME'] = 'https'
+            app.config['SESSION_COOKIE_SECURE'] = True
+            app.config['SESSION_COOKIE_HTTPONLY'] = True
+            app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
     except KeyError as e:
         logger.error(f"❌ Missing configuration key: {e}")
         sys.exit(1)
@@ -209,6 +223,12 @@ def create_app():
     
     # --- 6. SocketIO Events are now registered in the WebSocket blueprint ---
     # register_socketio_events() - Moved to WebSocket blueprint
+    
+    # --- 7. Apply security headers to all responses ---
+    @app.after_request
+    def add_security_headers(response):
+        """Apply security headers to all responses"""
+        return apply_security_headers(response)
     
     return app
 

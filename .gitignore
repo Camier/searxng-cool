@@ -76,3 +76,7 @@ settings.local.yml
 # Development
 .ipynb_checkpoints/
 notebooks/
+
+# Test files in root
+test_*.py
+/test_*.py

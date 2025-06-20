@@ -136,8 +136,13 @@ def get_database_uri(config: Optional[Dict[str, Any]] = None) -> str:
             return db_uri
         
         # Last resort - construct from components
+        from urllib.parse import quote_plus
+        
         db_user = os.environ.get('DB_USER', 'searxng_user')
-        db_pass = os.environ.get('DB_PASSWORD', 'searxng_music_2024')
+        db_pass = os.environ.get('DB_PASSWORD')
+        if not db_pass:
+            raise ValueError("DB_PASSWORD environment variable must be set")
+        db_pass = quote_plus(db_pass)  # URL encode the password
         db_host = os.environ.get('DB_HOST', 'localhost')
         db_port = os.environ.get('DB_PORT', '5432')
         db_name = os.environ.get('DB_NAME', 'searxng_cool_music')
