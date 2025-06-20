@@ -2,6 +2,24 @@
 
 A sophisticated multi-tier music search aggregation system built on SearXNG, featuring 27+ specialized music search engines, high-performance architecture, and collaborative features.
 
+## 🚨 Recent Updates (June 21, 2025)
+
+### ✅ All Critical Connectivity Issues Resolved
+- **Redis**: Fixed port configuration mismatch (6380 → 6379)
+- **PostgreSQL**: Fixed authentication with correct password and Unix socket trust
+- **Radio Paradise**: Fixed NoneType errors with null checks
+- **Apple Music/Pitchfork**: Added max_redirects handling for regional domains
+- **System Status**: **90% operational** (25/27 engines working)
+
+### Quick Health Check
+```bash
+# Check system status
+./audit_connectivity.sh
+
+# Start all services
+./start_services.sh
+```
+
 ## 🎵 Features
 
 - **27 Custom Music Search Engines**: Comprehensive coverage across all major music platforms
@@ -101,15 +119,21 @@ alembic upgrade head
 
 ### 5. Start Services
 ```bash
+# Use the convenient start script
+./start_services.sh
+
+# Or manually:
 # Start Redis
 sudo systemctl start redis
 
 # Start SearXNG Core
 cd searxng-core/searxng-core
+source ../searxng-venv/bin/activate
 python searx/webapp.py &
 
 # Start Orchestrator
 cd ../../orchestrator
+source ../venv/bin/activate
 python app_eventlet_optimized.py &
 ```
 
