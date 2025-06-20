@@ -26,7 +26,7 @@ server:
 
 redis:
   # URL to connect redis database. Is overwritten by ${SEARXNG_REDIS_URL}.
-  url: redis://localhost:6380/2
+  url: redis://localhost:6379/2
 
 ui:
   static_use_hash: true

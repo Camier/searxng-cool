@@ -23,6 +23,7 @@ from flask_socketio import SocketIO, emit, join_room, leave_room
 import redis
 import requests
 from urllib.parse import urljoin
+from config_loader_fixed import load_config as load_config_fixed
 
 # Configure logging for production
 logging.basicConfig(
@@ -34,20 +35,9 @@ logger = logging.getLogger(__name__)
 # Initialize Flask app
 app = Flask(__name__)
 
-def load_config():
-    """Load configuration with validation"""
-    config_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config', 'orchestrator.yml')
-    try:
-        with open(config_path, 'r') as f:
-            config = yaml.safe_load(f)
-        logger.info("✅ Configuration loaded successfully")
-        return config
-    except Exception as e:
-        logger.error(f"❌ Failed to load configuration: {e}")
-        sys.exit(1)
-
 # Load configuration
-config = load_config()
+config = load_config_fixed()
+logger.info("✅ Configuration loaded successfully")
 
 # Flask configuration with eventlet optimizations
 try:
@@ -55,6 +45,7 @@ try:
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = config['DATABASE']['SQLALCHEMY_TRACK_MODIFICATIONS']
     app.config['JWT_SECRET_KEY'] = config['JWT']['JWT_SECRET_KEY']
     app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(seconds=config['JWT']['JWT_ACCESS_TOKEN_EXPIRES'])
+    app.config['JWT_REFRESH_TOKEN_EXPIRES'] = timedelta(seconds=config['JWT']['JWT_REFRESH_TOKEN_EXPIRES'])
     
     # EVENTLET OPTIMIZED: SQLAlchemy configuration for greenlets
     app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
