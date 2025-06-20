@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Music Theme System</title>
+    <style>
+        :root {
+            /* Dynamic theme variables that evolve with your taste */
+            --primary-genre-color: #ff006e;
+            --secondary-genre-color: #8338ec;
+            --discovery-depth: 7;
+            --momentum-glow: 0.8;
+            --rarity-opacity: 0.9;
+            
+            /* Animated gradients based on listening patterns */
+            --taste-gradient: linear-gradient(
+                45deg,
+                var(--primary-genre-color) 0%,
+                var(--secondary-genre-color) 50%,
+                var(--tertiary-genre-color, #3a86ff) 100%
+            );
+            
+            /* UI adaptations */
+            --corner-radius: calc(5px + var(--discovery-depth) * 2px);
+            --blur-amount: calc(var(--discovery-depth) * 2px);
+            --animation-speed: calc(1s - var(--momentum-glow) * 0.5s);
+        }
+        
+        /* Theme transitions */
+        * {
+            transition: all var(--animation-speed) ease;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Dynamic background that reflects your current music space */
+        .dynamic-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .music-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-genre-color);
+            border-radius: 50%;
+            animation: float-particle 20s infinite linear;
+        }
+        
+        @keyframes float-particle {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Main interface with adaptive styling */
+        .theme-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            background: var(--taste-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 5s ease infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(30deg); }
+        }
+        
+        /* Theme showcase sections */
+        .theme-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(var(--blur-amount));
+            border-radius: var(--corner-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .theme-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--taste-gradient);
+            opacity: 0.05;
+            animation: pulse-bg var(--animation-speed) infinite alternate;
+        }
+        
+        @keyframes pulse-bg {
+            from { opacity: 0.05; }
+            to { opacity: 0.1; }
+        }
+        
+        /* Adaptive UI elements */
+        .search-box {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.2em;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
+            border-radius: var(--corner-radius);
+            color: #fff;
+            backdrop-filter: blur(10px);
+            background-image: var(--taste-gradient);
+            background-size: 300% 300%;
+            background-position: 0% 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary-genre-color);
+            background-position: 100% 50%;
+            box-shadow: 0 0 30px rgba(var(--primary-genre-color), 0.5);
+        }
+        
+        /* Genre-based card themes */
+        .discovery-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--corner-radius);
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .discovery-card.idm {
+            background: linear-gradient(135deg, rgba(156, 39, 176, 0.1), rgba(0, 0, 0, 0.1));
+            border-color: rgba(156, 39, 176, 0.3);
+        }
+        
+        .discovery-card.techno {
+            background: linear-gradient(135deg, rgba(244, 67, 54, 0.1), rgba(0, 0, 0, 0.1));
+            border-color: rgba(244, 67, 54, 0.3);
+        }
+        
+        .discovery-card.ambient {
+            background: linear-gradient(135deg, rgba(0, 188, 212, 0.1), rgba(0, 0, 0, 0.1));
+            border-color: rgba(0, 188, 212, 0.3);
+        }
+        
+        /* Momentum-based animations */
+        .high-momentum {
+            animation: momentum-pulse 1s infinite alternate;
+        }
+        
+        @keyframes momentum-pulse {
+            from {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
+            }
+            to {
+                transform: scale(1.02);
+                box-shadow: 0 0 40px rgba(255, 0, 110, 0.8);
+            }
+        }
+        
+        /* Discovery depth indicator */
+        .depth-indicator {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            width: 60px;
+            height: 300px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 10px;
+        }
+        
+        .depth-bar {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to top,
+                #3a86ff 0%,     /* Mainstream */
+                #8338ec 50%,    /* Underground */
+                #ff006e 100%    /* Ultra-rare */
+            );
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .depth-marker {
+            position: absolute;
+            bottom: calc(var(--discovery-depth) * 10%);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 4px;
+            background: #fff;
+            border-radius: 2px;
+            box-shadow: 0 0 20px #fff;
+            animation: depth-glow 2s infinite;
+        }
+        
+        @keyframes depth-glow {
+            0%, 100% { box-shadow: 0 0 20px #fff; }
+            50% { box-shadow: 0 0 40px #fff, 0 0 60px var(--primary-genre-color); }
+        }
+        
+        /* Taste evolution timeline */
+        .taste-timeline {
+            height: 100px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .timeline-path {
+            height: 100%;
+            position: relative;
+        }
+        
+        .genre-node {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .genre-node:hover {
+            transform: translateY(-50%) scale(1.5);
+        }
+        
+        /* Interactive theme controls */
+        .theme-controls {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .theme-preset {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .theme-preset:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 30px currentColor;
+        }
+        
+        .theme-preset.active::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 20px;
+        }
+        
+        /* Live theme evolution */
+        .evolution-status {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: 1px solid var(--primary-genre-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .evolution-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary-genre-color);
+            animation: evolution-pulse 2s infinite;
+        }
+        
+        @keyframes evolution-pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+        
+        /* Adaptive buttons */
+        .action-button {
+            padding: 12px 30px;
+            background: var(--taste-gradient);
+            border: none;
+            border-radius: var(--corner-radius);
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(var(--primary-genre-color), 0.5);
+        }
+        
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s;
+        }
+        
+        .action-button:active::before {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Dynamic particle background -->
+    <div class="dynamic-background">
+        <div class="music-particles" id="particleContainer"></div>
+    </div>
+    
+    <!-- Depth indicator -->
+    <div class="depth-indicator">
+        <div class="depth-bar">
+            <div class="depth-marker"></div>
+        </div>
+    </div>
+    
+    <!-- Theme controls -->
+    <div class="theme-controls">
+        <h3 style="margin: 0 0 15px 0; font-size: 0.9em; opacity: 0.7;">Your Themes</h3>
+        <div class="theme-preset active" style="background: linear-gradient(45deg, #ff006e, #8338ec);" onclick="setTheme('current')"></div>
+        <div class="theme-preset" style="background: linear-gradient(45deg, #00ff88, #0088ff);" onclick="setTheme('electronic')"></div>
+        <div class="theme-preset" style="background: linear-gradient(45deg, #ff6b6b, #ffd93d);" onclick="setTheme('jazz')"></div>
+        <div class="theme-preset" style="background: linear-gradient(45deg, #a8e6cf, #dcedc1);" onclick="setTheme('ambient')"></div>
+    </div>
+    
+    <div class="theme-container">
+        <header class="header">
+            <h1>Your Music Universe</h1>
+            <p style="opacity: 0.7; font-size: 1.2em;">Theme evolves with your discoveries</p>
+        </header>
+        
+        <!-- Adaptive search -->
+        <div class="theme-section">
+            <h2>Adaptive Search</h2>
+            <input type="text" class="search-box" placeholder="Search for music... (themed to your taste)">
+            <p style="margin-top: 15px; opacity: 0.7;">
+                Search box adapts to your primary genres: Currently IDM/Techno focused
+            </p>
+        </div>
+        
+        <!-- Discovery cards with genre theming -->
+        <div class="theme-section">
+            <h2>Recent Discoveries</h2>
+            
+            <div class="discovery-card idm high-momentum">
+                <h3>Polynomial-C - Aphex Twin</h3>
+                <p>🔥 Momentum: 92% | 🎧 IDM Classic</p>
+                <p>Your theme is shifting purple due to high IDM activity</p>
+            </div>
+            
+            <div class="discovery-card techno">
+                <h3>The Bells - Jeff Mills</h3>
+                <p>📈 Growing interest in Detroit Techno</p>
+                <p>Red accents appearing in your theme</p>
+            </div>
+            
+            <div class="discovery-card ambient">
+                <h3>Substrata - Biosphere</h3>
+                <p>🌊 Exploring ambient depths</p>
+                <p>Blue tones emerging in gradients</p>
+            </div>
+        </div>
+        
+        <!-- Taste evolution timeline -->
+        <div class="theme-section">
+            <h2>Your Taste Evolution</h2>
+            <div class="taste-timeline">
+                <div class="timeline-path">
+                    <div class="genre-node" style="background: #e74c3c; left: 10%;" title="Rock Phase"></div>
+                    <div class="genre-node" style="background: #3498db; left: 30%;" title="Electronic Discovery"></div>
+                    <div class="genre-node" style="background: #9b59b6; left: 50%;" title="IDM Deep Dive"></div>
+                    <div class="genre-node" style="background: #e91e63; left: 70%;" title="Techno Exploration"></div>
+                    <div class="genre-node" style="background: #00bcd4; left: 90%; animation: pulse 2s infinite;" title="Current: Ambient"></div>
+                </div>
+            </div>
+            <p style="margin-top: 15px; text-align: center; opacity: 0.7;">
+                Your UI theme evolves as you explore new genres
+            </p>
+        </div>
+        
+        <!-- Theme evolution showcase -->
+        <div class="theme-section">
+            <h2>How Your Theme Adapts</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h3>Visual Elements</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>📊 Corner radius: <span id="radiusValue">19px</span> (based on discovery depth)</li>
+                        <li>✨ Blur amount: <span id="blurValue">14px</span> (deeper = more blur)</li>
+                        <li>🎨 Primary color: <span id="primaryColor">#ff006e</span> (top genre)</li>
+                        <li>⚡ Animation speed: <span id="speedValue">0.2s</span> (momentum-based)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Behavioral Adaptations</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>🔍 Search suggestions match your genres</li>
+                        <li>🎯 UI complexity scales with experience</li>
+                        <li>🌈 Color palette from your top 3 genres</li>
+                        <li>🎪 Effects intensity from discovery depth</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <button class="action-button" onclick="simulateDiscovery()">
+                    Simulate New Discovery
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Evolution status -->
+    <div class="evolution-status">
+        <div class="evolution-dot"></div>
+        <span>Theme evolving based on your taste...</span>
+    </div>
+    
+    <script>
+        // Initialize particle system based on music taste
+        function initParticles() {
+            const container = document.getElementById('particleContainer');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                
+                // Color based on genre preferences
+                const colors = ['#ff006e', '#8338ec', '#3a86ff'];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Theme evolution based on discoveries
+        let currentTheme = {
+            primaryGenre: 'idm',
+            secondaryGenre: 'techno',
+            discoveryDepth: 7,
+            momentum: 0.8,
+            genreColors: {
+                idm: '#9b59b6',
+                techno: '#e74c3c',
+                ambient: '#00bcd4',
+                electronic: '#3498db'
+            }
+        };
+        
+        function updateTheme(discovery) {
+            // Update CSS variables based on discovery
+            const root = document.documentElement;
+            
+            // Shift primary color towards new genre
+            if (discovery.genre && currentTheme.genreColors[discovery.genre]) {
+                root.style.setProperty('--primary-genre-color', currentTheme.genreColors[discovery.genre]);
+            }
+            
+            // Update discovery depth
+            if (discovery.rarity) {
+                currentTheme.discoveryDepth = Math.min(10, currentTheme.discoveryDepth + discovery.rarity);
+                root.style.setProperty('--discovery-depth', currentTheme.discoveryDepth);
+            }
+            
+            // Update momentum
+            if (discovery.momentum) {
+                currentTheme.momentum = discovery.momentum;
+                root.style.setProperty('--momentum-glow', currentTheme.momentum);
+            }
+            
+            // Update display values
+            updateDisplayValues();
+        }
+        
+        function updateDisplayValues() {
+            document.getElementById('radiusValue').textContent = 
+                `${5 + currentTheme.discoveryDepth * 2}px`;
+            document.getElementById('blurValue').textContent = 
+                `${currentTheme.discoveryDepth * 2}px`;
+            document.getElementById('primaryColor').textContent = 
+                getComputedStyle(document.documentElement).getPropertyValue('--primary-genre-color');
+            document.getElementById('speedValue').textContent = 
+                `${1 - currentTheme.momentum * 0.5}s`;
+        }
+        
+        // Simulate discovery for demo
+        function simulateDiscovery() {
+            const genres = ['idm', 'techno', 'ambient', 'electronic'];
+            const discovery = {
+                genre: genres[Math.floor(Math.random() * genres.length)],
+                rarity: Math.random() * 0.5,
+                momentum: 0.5 + Math.random() * 0.5
+            };
+            
+            updateTheme(discovery);
+            
+            // Visual feedback
+            const flash = document.createElement('div');
+            flash.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: ${currentTheme.genreColors[discovery.genre]};
+                opacity: 0;
+                pointer-events: none;
+                z-index: 9999;
+            `;
+            document.body.appendChild(flash);
+            
+            flash.animate([
+                { opacity: 0 },
+                { opacity: 0.3 },
+                { opacity: 0 }
+            ], {
+                duration: 500,
+                easing: 'ease-out'
+            }).onfinish = () => flash.remove();
+        }
+        
+        // Theme presets based on listening history
+        function setTheme(preset) {
+            const themes = {
+                current: {
+                    primary: '#ff006e',
+                    secondary: '#8338ec',
+                    depth: 7
+                },
+                electronic: {
+                    primary: '#00ff88',
+                    secondary: '#0088ff',
+                    depth: 5
+                },
+                jazz: {
+                    primary: '#ff6b6b',
+                    secondary: '#ffd93d',
+                    depth: 4
+                },
+                ambient: {
+                    primary: '#a8e6cf',
+                    secondary: '#dcedc1',
+                    depth: 8
+                }
+            };
+            
+            const theme = themes[preset];
+            if (theme) {
+                const root = document.documentElement;
+                root.style.setProperty('--primary-genre-color', theme.primary);
+                root.style.setProperty('--secondary-genre-color', theme.secondary);
+                root.style.setProperty('--discovery-depth', theme.depth);
+                
+                // Update active preset
+                document.querySelectorAll('.theme-preset').forEach(el => 
+                    el.classList.remove('active')
+                );
+                event.target.classList.add('active');
+                
+                updateDisplayValues();
+            }
+        }
+        
+        // Real-time theme evolution
+        function startThemeEvolution() {
+            // Simulate continuous discovery
+            setInterval(() => {
+                // Subtle color shifts
+                const hue = (Date.now() / 100) % 360;
+                const root = document.documentElement;
+                
+                // Gentle hue rotation on gradients
+                const currentPrimary = getComputedStyle(root).getPropertyValue('--primary-genre-color');
+                // This would connect to actual discovery data
+                
+            }, 5000);
+        }
+        
+        // Initialize
+        initParticles();
+        updateDisplayValues();
+        startThemeEvolution();
+    </script>
+</body>
+</html>

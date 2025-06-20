@@ -1,0 +1,27 @@
+# Orchestrator Configuration Template
+# Copy this to orchestrator.yml and fill in your actual values
+DATABASE:
+  SQLALCHEMY_DATABASE_URI: 'postgresql://username:password@localhost/database_name'
+  SQLALCHEMY_TRACK_MODIFICATIONS: false
+
+JWT:
+  JWT_SECRET_KEY: 'your-secret-key-here-generate-a-random-string'
+  JWT_ACCESS_TOKEN_EXPIRES: 3600
+
+REDIS:
+  REDIS_URL: 'redis://localhost:6379/0'
+
+SEARXNG:
+  CORE_URL: 'http://localhost:8888'
+  SETTINGS_PATH: '/home/mik/SEARXNG/searxng-cool/config/searxng-settings.yml'
+
+WEBSOCKET:
+  SOCKETIO_REDIS_URL: 'redis://localhost:6379/1'
+
+SERVER:
+  HOST: '0.0.0.0'
+  PORT: 8889
+  DEBUG: true
+
+CORS:
+  ORIGINS: ['http://localhost:3000', 'http://localhost:8095']

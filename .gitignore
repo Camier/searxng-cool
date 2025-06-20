@@ -1,0 +1,78 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+test-venv/
+searxng-venv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Redis
+dump.rdb
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test coverage
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Documentation builds
+docs/_build/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Instance-specific
+instance/
+*.pid
+
+# Secrets
+*.key
+*.pem
+*.cert
+config/secrets/
+
+# Local configuration overrides
+config/local/
+settings.local.yml
+
+# Development
+.ipynb_checkpoints/
+notebooks/

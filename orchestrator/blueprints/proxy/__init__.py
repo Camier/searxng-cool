@@ -1,0 +1,1 @@
+# Proxy blueprint for SearXNG integration

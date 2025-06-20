@@ -1,0 +1,26 @@
+# Orchestrator Configuration
+DATABASE:
+  SQLALCHEMY_DATABASE_URI: ${DATABASE_URL:-postgresql:///searxng_cool_music}
+  SQLALCHEMY_TRACK_MODIFICATIONS: false
+
+JWT:
+  JWT_SECRET_KEY: ${JWT_SECRET_KEY:-35252cc1a9e34982a35fa65632c09f17}
+  JWT_ACCESS_TOKEN_EXPIRES: ${JWT_ACCESS_TOKEN_EXPIRES:-3600}
+
+REDIS:
+  REDIS_URL: 'redis://localhost:6379/0'
+
+SEARXNG:
+  CORE_URL: 'http://localhost:8888'
+  SETTINGS_PATH: '/home/mik/SEARXNG/searxng-cool/config/searxng-settings.yml'
+
+WEBSOCKET:
+  SOCKETIO_REDIS_URL: 'redis://localhost:6379/1'
+
+SERVER:
+  HOST: '0.0.0.0'
+  PORT: 8889
+  DEBUG: true
+
+CORS:
+  ORIGINS: ['http://localhost:3000', 'http://localhost:8095']

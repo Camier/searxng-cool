@@ -1,0 +1,1137 @@
+{
+  "Kodi Music Scraping": {
+    "url": "https://kodi.wiki/view/Scraping_Music",
+    "success": true,
+    "contentLength": 13849,
+    "keyInfo": {
+      "title": "Scraping Music - Official Kodi Wiki",
+      "headings": [
+        "Scraping Music",
+        "Contents",
+        "Introduction",
+        "What is Scraped",
+        "Artists",
+        "Albums",
+        "What is Overwritten",
+        "Scrapers",
+        "Extended Artwork",
+        "Extra Fanart",
+        "Performing the Scrape",
+        "Artists",
+        "Albums",
+        "Unscraped Items",
+        "End of Setup",
+        "Technical Details",
+        "References",
+        "Navigation menu",
+        "\n\t\tPersonal tools\n\t",
+        "\n\t\tNamespaces\n\t",
+        "\n\t\tViews\n\t",
+        "Search",
+        "\n\t\tBlank\n\t",
+        "Wiki main pages",
+        "Kodi Menu",
+        "Extras",
+        "Development",
+        "Devices",
+        "Wiki help",
+        "Tools"
+      ],
+      "codeBlocks": [
+        "<advancedsettings>\n\t<musiclibrary>\n\t\t<artistextraart>\n\t\t\t<arttype>banner</arttype>\n\t\t\t<arttype>clearart</arttype>\n\t\t\t<arttype>clearlogo</arttype>\n\t\t\t<arttype>landscape</arttype>\n\t\t\t<arttype>fanart1</a..."
+      ],
+      "links": [
+        {
+          "text": "Jump to navigation",
+          "href": "https://kodi.wiki/view/Scraping_Music#mw-head"
+        },
+        {
+          "text": "Jump to search",
+          "href": "https://kodi.wiki/view/Scraping_Music#searchInput"
+        },
+        {
+          "text": "Scanning Music Into Library",
+          "href": "https://kodi.wiki/view/Adding_music_to_the_library"
+        },
+        {
+          "text": "1\tIntroduction",
+          "href": "https://kodi.wiki/view/Scraping_Music#Introduction"
+        },
+        {
+          "text": "2\tWhat is Scraped",
+          "href": "https://kodi.wiki/view/Scraping_Music#What_is_Scraped"
+        },
+        {
+          "text": "2.1\tArtists",
+          "href": "https://kodi.wiki/view/Scraping_Music#Artists"
+        },
+        {
+          "text": "2.2\tAlbums",
+          "href": "https://kodi.wiki/view/Scraping_Music#Albums"
+        },
+        {
+          "text": "2.3\tWhat is Overwritten",
+          "href": "https://kodi.wiki/view/Scraping_Music#What_is_Overwritten"
+        },
+        {
+          "text": "3\tScrapers",
+          "href": "https://kodi.wiki/view/Scraping_Music#Scrapers"
+        },
+        {
+          "text": "3.1\tExtended Artwork",
+          "href": "https://kodi.wiki/view/Scraping_Music#Extended_Artwork"
+        },
+        {
+          "text": "3.2\tExtra Fanart",
+          "href": "https://kodi.wiki/view/Scraping_Music#Extra_Fanart"
+        },
+        {
+          "text": "4\tPerforming the Scrape",
+          "href": "https://kodi.wiki/view/Scraping_Music#Performing_the_Scrape"
+        },
+        {
+          "text": "4.1\tArtists",
+          "href": "https://kodi.wiki/view/Scraping_Music#Artists_2"
+        },
+        {
+          "text": "4.2\tAlbums",
+          "href": "https://kodi.wiki/view/Scraping_Music#Albums_2"
+        },
+        {
+          "text": "5\tUnscraped Items",
+          "href": "https://kodi.wiki/view/Scraping_Music#Unscraped_Items"
+        },
+        {
+          "text": "6\tEnd of Setup",
+          "href": "https://kodi.wiki/view/Scraping_Music#End_of_Setup"
+        },
+        {
+          "text": "7\tTechnical Details",
+          "href": "https://kodi.wiki/view/Scraping_Music#Technical_Details"
+        },
+        {
+          "text": "8\tReferences",
+          "href": "https://kodi.wiki/view/Scraping_Music#References"
+        },
+        {
+          "text": "[1]",
+          "href": "https://kodi.wiki/view/Scraping_Music#cite_note-1"
+        },
+        {
+          "text": "",
+          "href": "https://kodi.wiki/view/File:Estuary_home_music_files.png"
+        },
+        {
+          "text": "",
+          "href": "https://kodi.wiki/view/File:Estuary_home_music_files.png"
+        },
+        {
+          "text": "[2]",
+          "href": "https://kodi.wiki/view/Scraping_Music#cite_note-2"
+        },
+        {
+          "text": "[3]",
+          "href": "https://kodi.wiki/view/Scraping_Music#cite_note-3"
+        },
+        {
+          "text": "↑",
+          "href": "https://kodi.wiki/view/Scraping_Music#cite_ref-1"
+        },
+        {
+          "text": "https://github.com/xbmc/xbmc/pull/13848",
+          "href": "https://github.com/xbmc/xbmc/pull/13848"
+        },
+        {
+          "text": "↑",
+          "href": "https://kodi.wiki/view/Scraping_Music#cite_ref-2"
+        },
+        {
+          "text": "https://en.wikipedia.org/wiki/List_of_online_music_databases",
+          "href": "https://en.wikipedia.org/wiki/List_of_online_music_databases"
+        },
+        {
+          "text": "↑",
+          "href": "https://kodi.wiki/view/Scraping_Music#cite_ref-3"
+        },
+        {
+          "text": "https://yadg.cc/available-scrapers",
+          "href": "https://yadg.cc/available-scrapers"
+        },
+        {
+          "text": "Return to top",
+          "href": "https://kodi.wiki/view/Scraping_Music#top"
+        },
+        {
+          "text": "https://kodi.wiki/index.php?title=Scraping_Music&oldid=255444",
+          "href": "https://kodi.wiki/index.php?title=Scraping_Music&oldid=255444"
+        },
+        {
+          "text": "Log in",
+          "href": "https://kodi.wiki/index.php?title=Special:UserLogin&returnto=Scraping+Music"
+        },
+        {
+          "text": "Page",
+          "href": "https://kodi.wiki/view/Scraping_Music"
+        },
+        {
+          "text": "Discussion",
+          "href": "https://kodi.wiki/index.php?title=Talk:Scraping_Music&action=edit&redlink=1"
+        },
+        {
+          "text": "Read",
+          "href": "https://kodi.wiki/view/Scraping_Music"
+        },
+        {
+          "text": "View source",
+          "href": "https://kodi.wiki/index.php?title=Scraping_Music&action=edit"
+        },
+        {
+          "text": "View history",
+          "href": "https://kodi.wiki/index.php?title=Scraping_Music&action=history"
+        },
+        {
+          "text": "What links here",
+          "href": "https://kodi.wiki/view/Special:WhatLinksHere/Scraping_Music"
+        },
+        {
+          "text": "Related changes",
+          "href": "https://kodi.wiki/view/Special:RecentChangesLinked/Scraping_Music"
+        },
+        {
+          "text": "Permanent link",
+          "href": "https://kodi.wiki/index.php?title=Scraping_Music&oldid=255444"
+        },
+        {
+          "text": "Page information",
+          "href": "https://kodi.wiki/index.php?title=Scraping_Music&action=info"
+        }
+      ]
+    },
+    "contentSnippet": "Scraping Music\nJump to navigation\nJump to search\nSteps to create your Music Library\n\n\n1. Guide Main Page\n2. Music Settings\n3. Music File Tagging\n4. Scanning Music Into Library\n5. Artist information folder\n6. Scraping Additional Music data\n\n7. Update Music Library\n8. NFO Files\n8.1 Music NFO Files\n\n9. Artwork\n9.1 Music Artwork\n\n10. Import-export library\n10.1 Music Import-Export\n\n11. Backup & Recover\n\n\t \t\t Music library\t Scraping Music\n\n\n\n\nContents\n1\tIntroduction\n2\tWhat is Scraped\n2.1\tArtists\n2.2\tA"
+  },
+  "Pitchfork Scraping": {
+    "url": "https://medium.com/@stephaniecaress/scraping-pitchforks-best-new-music-be563d18ea4f",
+    "success": true,
+    "contentLength": 11505,
+    "keyInfo": {
+      "title": "Web Scraping using Pitchfork’s “Best New Music” | by Stephaniecaress | Medium",
+      "headings": [
+        "Web Scraping using Pitchfork’s “Best New Music”",
+        "1. Check for API and site limitations",
+        "2. Decide what content to retrieve",
+        "3. Retrieve information and figure out HTML elements",
+        "4. Store in the desired format",
+        "Written by Stephaniecaress",
+        "No responses yet"
+      ],
+      "codeBlocks": [],
+      "links": [
+        {
+          "text": "Sign in",
+          "href": "https://medium.com/m/signin?operation=login&redirect=https%3A%2F%2Fmedium.com%2F%40stephaniecaress%2Fscraping-pitchforks-best-new-music-be563d18ea4f&source=post_page---top_nav_layout_nav-----------------------global_nav------------------"
+        },
+        {
+          "text": "Sign in",
+          "href": "https://medium.com/m/signin?operation=login&redirect=https%3A%2F%2Fmedium.com%2F%40stephaniecaress%2Fscraping-pitchforks-best-new-music-be563d18ea4f&source=post_page---top_nav_layout_nav-----------------------global_nav------------------"
+        },
+        {
+          "text": "",
+          "href": "https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fvote%2Fp%2Fbe563d18ea4f&operation=register&redirect=https%3A%2F%2Fmedium.com%2F%40stephaniecaress%2Fscraping-pitchforks-best-new-music-be563d18ea4f&user=Stephaniecaress&userId=a0ff861a145b&source=---header_actions--be563d18ea4f---------------------clap_footer------------------"
+        },
+        {
+          "text": "",
+          "href": "https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fbookmark%2Fp%2Fbe563d18ea4f&operation=register&redirect=https%3A%2F%2Fmedium.com%2F%40stephaniecaress%2Fscraping-pitchforks-best-new-music-be563d18ea4f&source=---header_actions--be563d18ea4f---------------------bookmark_footer------------------"
+        },
+        {
+          "text": "here",
+          "href": "https://github.com/scaress21/pitchfork_scrape"
+        },
+        {
+          "text": "visual from past Indy 500 race data",
+          "href": "https://public.tableau.com/profile/api/publish/Indy_500/IndyDash"
+        },
+        {
+          "text": "finished repo ",
+          "href": "https://github.com/scaress21/pitchfork_scrape"
+        },
+        {
+          "text": "my GitHub",
+          "href": "https://github.com/scaress21/pitchfork_scrape"
+        },
+        {
+          "text": "Web Scraping",
+          "href": "https://medium.com/tag/web-scraping?source=post_page-----be563d18ea4f---------------------------------------"
+        },
+        {
+          "text": "",
+          "href": "https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fvote%2Fp%2Fbe563d18ea4f&operation=register&redirect=https%3A%2F%2Fmedium.com%2F%40stephaniecaress%2Fscraping-pitchforks-best-new-music-be563d18ea4f&user=Stephaniecaress&userId=a0ff861a145b&source=---footer_actions--be563d18ea4f---------------------clap_footer------------------"
+        },
+        {
+          "text": "",
+          "href": "https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fvote%2Fp%2Fbe563d18ea4f&operation=register&redirect=https%3A%2F%2Fmedium.com%2F%40stephaniecaress%2Fscraping-pitchforks-best-new-music-be563d18ea4f&user=Stephaniecaress&userId=a0ff861a145b&source=---footer_actions--be563d18ea4f---------------------clap_footer------------------"
+        },
+        {
+          "text": "",
+          "href": "https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fbookmark%2Fp%2Fbe563d18ea4f&operation=register&redirect=https%3A%2F%2Fmedium.com%2F%40stephaniecaress%2Fscraping-pitchforks-best-new-music-be563d18ea4f&source=---footer_actions--be563d18ea4f---------------------bookmark_footer------------------"
+        }
+      ]
+    },
+    "contentSnippet": "Web Scraping using Pitchfork’s “Best New Music”\nStephaniecaress\nFollow\n9 min read\n·\nAug 14, 2020\n\n--\n\nPitchfork’s “Best New Music” header\n\nIn a world of targeted ads and constant recommendations, it sometimes feels like I consume media and buy products passively. It is easy to float through the day without noticing who is recommending what you watch, buy, and listen to. As much as I love getting an amazing suggestion on Spotify, I try to be an active seeker of music rather than a receptacle for "
+  },
+  "MusicToScrape": {
+    "url": "https://tilburgsciencehub.com/blog/musictoscrape",
+    "success": true,
+    "contentLength": 1957,
+    "keyInfo": {
+      "title": "Learn Web Scraping through Music To Scrape - Tilburg Science Hub",
+      "headings": [
+        "Learn Web Scraping through Music To Scrape",
+        "Learn Web Scraping through Music To Scrape",
+        "Explore Music To Scrape",
+        "User Behavior Simulation",
+        "A Safe Learning Environment"
+      ],
+      "codeBlocks": [],
+      "links": [
+        {
+          "text": " ",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": "\n\t\t\t\t\t\n\t\t\t\t",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": "",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": "\n\t\t\t\t\t\n\t\t\t\t",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": "\n\t\t\t\t\t\t\tTour",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": "Skip",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": "A Simple Reproducible Web Scraping Example",
+          "href": "https://tilburgsciencehub.com/examples/simple-reproducible-webscraping"
+        },
+        {
+          "text": "Skip",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": "Skip",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": "Submit a\n\t\t\t\t\t\t\t\t\t\tnew issue on GitHub",
+          "href": "https://github.com/tilburgsciencehub/website/issues/new/choose"
+        },
+        {
+          "text": "Check out our\n\t\t\t\t\t\t\t\t\t\trepositories",
+          "href": "https://github.com/orgs/tilburgsciencehub/repositories"
+        },
+        {
+          "text": "Tour",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": "Topics ",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": "About ",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": " Topics",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": " About",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": " Examples",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": " Take a tour!",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": "third party code",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#manage-consent"
+        },
+        {
+          "text": "Musictoscrape",
+          "href": "http://tilburgsciencehub.com/blog/musictoscrape/"
+        },
+        {
+          "text": "",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#"
+        },
+        {
+          "text": "Learn Web Scraping through Music To Scrape",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#learn-web-scraping-through-music-to-scrape"
+        },
+        {
+          "text": "Explore Music To Scrape",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#explore-music-to-scrape"
+        },
+        {
+          "text": "User Behavior Simulation",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#user-behavior-simulation"
+        },
+        {
+          "text": "A Safe Learning Environment",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#a-safe-learning-environment"
+        },
+        {
+          "text": "",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": "Music To Scrape website",
+          "href": "https://music-to-scrape.org/"
+        },
+        {
+          "text": "A Simple Reproducible Web Scraping Example",
+          "href": "https://tilburgsciencehub.com/examples/simple-reproducible-webscraping"
+        },
+        {
+          "text": "Tour",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#0"
+        },
+        {
+          "text": "GitHub Repository",
+          "href": "https://github.com/tilburgsciencehub/website"
+        },
+        {
+          "text": "Onboarding Guide",
+          "href": "https://github.com/tilburgsciencehub/onboarding/wiki"
+        },
+        {
+          "text": "Manage Cookies",
+          "href": "https://tilburgsciencehub.com/blog/musictoscrape#manage-consent"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/tilburgsciencehub"
+        }
+      ]
+    },
+    "contentSnippet": "Share\n\n2023-11-24T12:02:51+05:30\n\nLearn Web Scraping through Music To Scrape\n\nIn a world where data and technology are playing a bigger role every day, knowing how to use web scraping and API integration is a super valuable skill for students and data science enthusiasts. That is why we want to introduce Music To Scrape: It serves as a creative educational platform that offers a real and interesting method for learning these skills.\n\nExplore Music To Scrape\n\nMusic To Scrape is essentially a fict"
+  },
+  "Python Music Discovery": {
+    "url": "https://python.plainenglish.io/discover-new-music-by-scraping-the-web-with-python-9caa04f4bf41",
+    "success": true,
+    "contentLength": 1174,
+    "keyInfo": {
+      "title": "Discover new music by scraping the web with Python | by Umberto Grando | Python in Plain English",
+      "headings": [
+        "Python in Plain English",
+        "Discover new music by scraping the web with Python",
+        "Downloading reviews from Metacritic with Python",
+        "Learn how to use HTTP requests to scrape the web!",
+        "0. Requirements",
+        "Published in Python in Plain English",
+        "Written by Umberto Grando",
+        "No responses yet"
+      ],
+      "codeBlocks": [],
+      "links": [
+        {
+          "text": "Sign up",
+          "href": "https://medium.com/m/signin?operation=register&redirect=https%3A%2F%2Fpython.plainenglish.io%2Fdiscover-new-music-by-scraping-the-web-with-python-9caa04f4bf41&source=post_page---top_nav_layout_nav-----------------------global_nav------------------"
+        },
+        {
+          "text": "Sign in",
+          "href": "https://medium.com/m/signin?operation=login&redirect=https%3A%2F%2Fpython.plainenglish.io%2Fdiscover-new-music-by-scraping-the-web-with-python-9caa04f4bf41&source=post_page---top_nav_layout_nav-----------------------global_nav------------------"
+        },
+        {
+          "text": "Sign up",
+          "href": "https://medium.com/m/signin?operation=register&redirect=https%3A%2F%2Fpython.plainenglish.io%2Fdiscover-new-music-by-scraping-the-web-with-python-9caa04f4bf41&source=post_page---top_nav_layout_nav-----------------------global_nav------------------"
+        },
+        {
+          "text": "Sign in",
+          "href": "https://medium.com/m/signin?operation=login&redirect=https%3A%2F%2Fpython.plainenglish.io%2Fdiscover-new-music-by-scraping-the-web-with-python-9caa04f4bf41&source=post_page---top_nav_layout_nav-----------------------global_nav------------------"
+        },
+        {
+          "text": "Follow publication",
+          "href": "https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fsubscribe%2Fcollection%2Fpython-in-plain-english&operation=register&redirect=https%3A%2F%2Fpython.plainenglish.io%2Fdiscover-new-music-by-scraping-the-web-with-python-9caa04f4bf41&collection=Python+in+Plain+English&collectionId=78073def27b8&source=post_page---publication_nav-78073def27b8-9caa04f4bf41---------------------publication_nav------------------"
+        },
+        {
+          "text": "Follow publication",
+          "href": "https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fsubscribe%2Fcollection%2Fpython-in-plain-english&operation=register&redirect=https%3A%2F%2Fpython.plainenglish.io%2Fdiscover-new-music-by-scraping-the-web-with-python-9caa04f4bf41&collection=Python+in+Plain+English&collectionId=78073def27b8&source=post_page---post_publication_sidebar-78073def27b8-9caa04f4bf41---------------------post_publication_sidebar------------------"
+        },
+        {
+          "text": "",
+          "href": "https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fvote%2Fpython-in-plain-english%2F9caa04f4bf41&operation=register&redirect=https%3A%2F%2Fpython.plainenglish.io%2Fdiscover-new-music-by-scraping-the-web-with-python-9caa04f4bf41&user=Umberto+Grando&userId=e64524f6261a&source=---header_actions--9caa04f4bf41---------------------clap_footer------------------"
+        },
+        {
+          "text": "",
+          "href": "https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fbookmark%2Fp%2F9caa04f4bf41&operation=register&redirect=https%3A%2F%2Fpython.plainenglish.io%2Fdiscover-new-music-by-scraping-the-web-with-python-9caa04f4bf41&source=---header_actions--9caa04f4bf41---------------------bookmark_footer------------------"
+        },
+        {
+          "text": "",
+          "href": "https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2Fplans%3Fdimension%3Dpost_audio_button%26postId%3D9caa04f4bf41&operation=register&redirect=https%3A%2F%2Fpython.plainenglish.io%2Fdiscover-new-music-by-scraping-the-web-with-python-9caa04f4bf41&source=---header_actions--9caa04f4bf41---------------------post_audio_button------------------"
+        },
+        {
+          "text": "https://rateyourmusic.com",
+          "href": "https://rateyourmusic.com/"
+        },
+        {
+          "text": "https://medium.com/r/?url=https%3A%2F%2Fpython.plainenglish.io%2Fbuild-a-web-scraping-python-project-from-start-to-finish-69039654d2de",
+          "href": "https://python.plainenglish.io/build-a-web-scraping-python-project-from-start-to-finish-69039654d2de"
+        },
+        {
+          "text": "",
+          "href": "https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fvote%2Fpython-in-plain-english%2F9caa04f4bf41&operation=register&redirect=https%3A%2F%2Fpython.plainenglish.io%2Fdiscover-new-music-by-scraping-the-web-with-python-9caa04f4bf41&user=Umberto+Grando&userId=e64524f6261a&source=---footer_actions--9caa04f4bf41---------------------clap_footer------------------"
+        },
+        {
+          "text": "",
+          "href": "https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fvote%2Fpython-in-plain-english%2F9caa04f4bf41&operation=register&redirect=https%3A%2F%2Fpython.plainenglish.io%2Fdiscover-new-music-by-scraping-the-web-with-python-9caa04f4bf41&user=Umberto+Grando&userId=e64524f6261a&source=---footer_actions--9caa04f4bf41---------------------clap_footer------------------"
+        },
+        {
+          "text": "",
+          "href": "https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fbookmark%2Fp%2F9caa04f4bf41&operation=register&redirect=https%3A%2F%2Fpython.plainenglish.io%2Fdiscover-new-music-by-scraping-the-web-with-python-9caa04f4bf41&source=---footer_actions--9caa04f4bf41---------------------bookmark_footer------------------"
+        }
+      ]
+    },
+    "contentSnippet": "Member-only story\n\nDiscover new music by scraping the web with Python\nUmberto Grando\nFollow\n5 min read\n·\nOct 17, 2022\n\n--\n\nHello World!\n\nToday we are going to build a script to find us new music to listen to. I’m a huge music listener; I listen to pretty much any genre and I love to search for new artists and albums. There are a few sites I often use to look for new music and today we are going to scrape Rateyourmusic.com.\n\nhttps://rateyourmusic.com\n\nCiting their website: “RYM is one of the larg"
+  },
+  "Apple Music Playlist Scraper": {
+    "url": "https://github.com/LF3551/Apple-Music-Playlist-Scraper",
+    "success": true,
+    "contentLength": 1083,
+    "keyInfo": {
+      "title": "GitHub - LF3551/Apple-Music-Playlist-Scraper: Python script for scraping song data from Apple Music's \"Today's Hits\" playlist.",
+      "headings": [
+        "Navigation Menu",
+        "Search code, repositories, users, issues, pull requests...",
+        "\n        Provide feedback\n      ",
+        "\n        Saved searches\n      ",
+        "Use saved searches to filter your results more quickly",
+        "License",
+        "        Uh oh!\n",
+        "LF3551/Apple-Music-Playlist-Scraper",
+        "Folders and files",
+        "Latest commit",
+        "History",
+        "Repository files navigation",
+        "Apple Music Playlist Scraper",
+        "Introduction",
+        "Technology Stack",
+        "Installation",
+        "Usage",
+        "Example Output",
+        "About",
+        "Topics",
+        "Resources",
+        "License",
+        "        Uh oh!\n",
+        "Stars",
+        "Watchers",
+        "Forks",
+        "Releases",
+        "Packages",
+        "Languages",
+        "Footer",
+        "Footer navigation"
+      ],
+      "codeBlocks": [
+        "[\n    {\n        \"Artist\": \"Artist Name 1\",\n        \"Song\": \"Song Title 1\"\n    },\n    {\n        \"Artist\": \"Artist Name 2\",\n        \"Song\": \"Song Title 2\"\n    }\n    // ... more songs\n]\n...",
+        "[\n    {\n        \"Artist\": \"Artist Name 1\",\n        \"Song\": \"Song Title 1\"\n    },\n    {\n        \"Artist\": \"Artist Name 2\",\n        \"Song\": \"Song Title 2\"\n    }\n    // ... more songs\n]\n..."
+      ],
+      "links": [
+        {
+          "text": "Skip to content",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper#start-of-content"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/"
+        },
+        {
+          "text": "\n            Sign in\n          ",
+          "href": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2FLF3551%2FApple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/features/copilot"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/features/models"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/security/advanced-security"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/features/actions"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/features/codespaces"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/features/issues"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/features/code-review"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/features/discussions"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/features/code-search"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/why-github"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/features"
+        },
+        {
+          "text": "",
+          "href": "https://docs.github.com/"
+        },
+        {
+          "text": "",
+          "href": "https://skills.github.com/"
+        },
+        {
+          "text": "",
+          "href": "https://github.blog/"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/enterprise"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/team"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/enterprise/startups"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/solutions/industry/nonprofits"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/solutions/use-case/devsecops"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/solutions/use-case/devops"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/solutions/use-case/ci-cd"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/solutions/use-case"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/solutions/industry/healthcare"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/solutions/industry/financial-services"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/solutions/industry/manufacturing"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/solutions/industry/government"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/solutions/industry"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/solutions"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/resources/articles/ai"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/resources/articles/devops"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/resources/articles/security"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/resources/articles/software-development"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/resources/articles"
+        },
+        {
+          "text": "",
+          "href": "https://resources.github.com/learn/pathways"
+        },
+        {
+          "text": "",
+          "href": "https://resources.github.com/"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/resources/whitepapers"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/customer-stories"
+        },
+        {
+          "text": "",
+          "href": "https://partner.github.com/"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/solutions/executive-insights"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/sponsors"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/readme"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/topics"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/trending"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/collections"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/enterprise"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/security/advanced-security"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/features/copilot/copilot-business"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/premium-support"
+        },
+        {
+          "text": "Pricing",
+          "href": "https://github.com/pricing"
+        },
+        {
+          "text": "Search syntax tips",
+          "href": "https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax"
+        },
+        {
+          "text": "documentation",
+          "href": "https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax"
+        },
+        {
+          "text": "Sign in",
+          "href": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2FLF3551%2FApple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "Sign up",
+          "href": "https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=LF3551%2FApple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "Reload",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "Reload",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "Reload",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "LF3551",
+          "href": "https://github.com/LF3551"
+        },
+        {
+          "text": "Apple-Music-Playlist-Scraper",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "Notifications",
+          "href": "https://github.com/login?return_to=%2FLF3551%2FApple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "Fork 0",
+          "href": "https://github.com/login?return_to=%2FLF3551%2FApple-Music-Playlist-Scraper"
+        },
+        {
+          "text": " Star 2",
+          "href": "https://github.com/login?return_to=%2FLF3551%2FApple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "\n      \n    \n\n     MIT license\n    ",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/blob/main/LICENSE"
+        },
+        {
+          "text": "\n          \n    \n\n          2\n          stars\n",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/stargazers"
+        },
+        {
+          "text": "\n          \n    \n\n          0\n          forks\n",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/forks"
+        },
+        {
+          "text": "\n          \n    \n\n          Branches\n",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/branches"
+        },
+        {
+          "text": "\n          \n    \n\n          Tags\n",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/tags"
+        },
+        {
+          "text": "\n          \n    \n\n          Activity\n",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/activity"
+        },
+        {
+          "text": "    \n    \n\n          Star\n\n",
+          "href": "https://github.com/login?return_to=%2FLF3551%2FApple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "    \n    \nNotifications\n",
+          "href": "https://github.com/login?return_to=%2FLF3551%2FApple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "Code",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "Issues",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/issues"
+        },
+        {
+          "text": "Pull requests",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/pulls"
+        },
+        {
+          "text": "Actions",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/actions"
+        },
+        {
+          "text": "Projects",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/projects"
+        },
+        {
+          "text": "Security",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/security"
+        },
+        {
+          "text": "\n    ",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/security"
+        },
+        {
+          "text": "\n  ",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/security"
+        },
+        {
+          "text": "\n    ",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/security"
+        },
+        {
+          "text": "\n      \n\n              Uh oh!\n\n              ",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/security"
+        },
+        {
+          "text": "There was an error while loading. ",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/security"
+        },
+        {
+          "text": "Please reload this page",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "Insights",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/pulse"
+        },
+        {
+          "text": "\n        \n          \n    \n\n        \n      \n        \n          Code\n      \n",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "\n        \n          \n    \n\n        \n      \n        \n          Issues\n      \n",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/issues"
+        },
+        {
+          "text": "\n        \n          \n    \n\n        \n      \n        \n          Pull requests\n      \n",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/pulls"
+        },
+        {
+          "text": "\n        \n          \n    \n\n        \n      \n        \n          Actions\n      \n",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/actions"
+        },
+        {
+          "text": "\n        \n          \n    \n\n        \n      \n        \n          Projects\n      \n",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/projects"
+        },
+        {
+          "text": "\n        \n          \n    \n\n        \n      \n        \n          Security\n      \n",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/security"
+        },
+        {
+          "text": "\n        \n          \n    \n\n        \n      \n        \n          Insights\n      \n",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/pulse"
+        },
+        {
+          "text": "Branches",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/branches"
+        },
+        {
+          "text": "Tags",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/tags"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/branches"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/tags"
+        },
+        {
+          "text": "3 Commits",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/commits/main/"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/commits/main/"
+        },
+        {
+          "text": "LICENSE",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/blob/main/LICENSE"
+        },
+        {
+          "text": "LICENSE",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/blob/main/LICENSE"
+        },
+        {
+          "text": "README.md",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/blob/main/README.md"
+        },
+        {
+          "text": "README.md",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/blob/main/README.md"
+        },
+        {
+          "text": "apple_music_scraper.py",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/blob/main/apple_music_scraper.py"
+        },
+        {
+          "text": "apple_music_scraper.py",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/blob/main/apple_music_scraper.py"
+        },
+        {
+          "text": "README",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper#"
+        },
+        {
+          "text": "MIT license",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper#"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper#apple-music-playlist-scraper"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper#introduction"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper#technology-stack"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper#installation"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper#usage"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper#example-output"
+        },
+        {
+          "text": "python",
+          "href": "https://github.com/topics/python"
+        },
+        {
+          "text": "music",
+          "href": "https://github.com/topics/music"
+        },
+        {
+          "text": "web-development",
+          "href": "https://github.com/topics/web-development"
+        },
+        {
+          "text": "scraping",
+          "href": "https://github.com/topics/scraping"
+        },
+        {
+          "text": " Readme",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper#readme-ov-file"
+        },
+        {
+          "text": " MIT license",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper#MIT-1-ov-file"
+        },
+        {
+          "text": "Please reload this page",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper"
+        },
+        {
+          "text": " Activity",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/activity"
+        },
+        {
+          "text": " 2 stars",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/stargazers"
+        },
+        {
+          "text": " 1 watching",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/watchers"
+        },
+        {
+          "text": " 0 forks",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/forks"
+        },
+        {
+          "text": "Report repository",
+          "href": "https://github.com/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2FLF3551%2FApple-Music-Playlist-Scraper&report=LF3551+%28user%29"
+        },
+        {
+          "text": "Releases",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/releases"
+        },
+        {
+          "text": "Packages",
+          "href": "https://github.com/users/LF3551/packages?repo_name=Apple-Music-Playlist-Scraper"
+        },
+        {
+          "text": "Python\n100.0%",
+          "href": "https://github.com/LF3551/Apple-Music-Playlist-Scraper/search?l=python"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/"
+        },
+        {
+          "text": "Terms",
+          "href": "https://docs.github.com/site-policy/github-terms/github-terms-of-service"
+        },
+        {
+          "text": "Privacy",
+          "href": "https://docs.github.com/site-policy/privacy-policies/github-privacy-statement"
+        },
+        {
+          "text": "Security",
+          "href": "https://github.com/security"
+        },
+        {
+          "text": "Status",
+          "href": "https://www.githubstatus.com/"
+        },
+        {
+          "text": "Docs",
+          "href": "https://docs.github.com/"
+        },
+        {
+          "text": "Contact",
+          "href": "https://support.github.com/?tags=dotcom-footer"
+        }
+      ]
+    },
+    "contentSnippet": "Apple Music Playlist Scraper\nIntroduction\n\nThis Python script efficiently extracts song data from Apple Music's \"Today's Hits\" playlist. Utilizing BeautifulSoup and requests, it fetches details like song titles and artist names, organizing them into a readable JSON format. This tool is perfect for music enthusiasts and data analysts interested in music trends.\n\nTechnology Stack\nPython\nBeautifulSoup\nrequests\nJSON\nInstallation\n\nBefore running the script, ensure Python is installed on your system. "
+  },
+  "Kodi Forum Thread": {
+    "url": "https://forum.kodi.tv/showthread.php?tid=264719",
+    "success": true,
+    "contentLength": 18604,
+    "keyInfo": {
+      "title": "Efficient music artist scraping",
+      "headings": [
+        "Login at Kodi Home",
+        "",
+        "QUICK LINKS",
+        "SPONSORS",
+        "ABOUT KODI"
+      ],
+      "codeBlocks": [],
+      "links": [
+        {
+          "text": "CODE",
+          "href": "https://github.com/xbmc/xbmc"
+        },
+        {
+          "text": "BUG TRACKER",
+          "href": "https://github.com/xbmc/xbmc/issues"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/xbmc/xbmc"
+        },
+        {
+          "text": "https://musicbrainz.org/release-group/8e...01aed6c029",
+          "href": "https://musicbrainz.org/release-group/8e97b13c-559e-3b66-8513-e001aed6c029"
+        },
+        {
+          "text": "http://www.allmusic.com/album/now-thats-...0001725415",
+          "href": "http://www.allmusic.com/album/now-thats-what-i-call-music%21-1980-mw0001725415"
+        },
+        {
+          "text": "",
+          "href": "https://github.com/xbmc/xbmc"
+        }
+      ]
+    },
+    "contentSnippet": "1\n(current)\n2\n3\n4\nNext \nEfficient music artist scraping\nDaveBlake \nTeam-Kodi Member\n\nPosts: 4,545\nJoined: Jun 2015\nReputation: 269\n#1\n  2016-03-17, 10:00\nFor more efficient artist scraping I think we need to be more selective over which artists we search the online databases for. There has been previous discussion over better targeting, selecting the appropriate online database for the kind of music etc., but this is more fundamental.\n\nDoing some testing with music library containing a single al"
+  }
+}
