@@ -80,3 +80,7 @@ notebooks/
 # Test files in root
 test_*.py
 /test_*.py
+# Security - never commit these
+.env
+*.bak
+start_services.sh.insecure.bak

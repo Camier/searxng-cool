@@ -3,9 +3,10 @@ Music API Routes
 Provides music-specific search and management endpoints
 """
 from flask import Blueprint, request, jsonify
-from flask_jwt_extended import jwt_required, get_jwt_identity
 from datetime import datetime
 import logging
+
+from orchestrator.utils.auth import jwt_required_with_user
 
 from orchestrator.services.music_search_service import MusicSearchService
 from orchestrator.database import db
@@ -22,8 +23,8 @@ music_search_service = MusicSearchService()
 
 
 @music_api_bp.route('/search', methods=['GET', 'POST'])
-@jwt_required()
-def music_search():
+@jwt_required_with_user()
+def music_search(current_user):
     """
     Search for music across multiple engines
     
@@ -32,7 +33,6 @@ def music_search():
     - engines: List of engines to use (optional)
     - limit: Max results (default 50)
     """
-    current_user = get_jwt_identity()
     
     # Get parameters
     if request.method == 'POST':
@@ -55,20 +55,20 @@ def music_search():
         results = music_search_service.search(query, engines, limit)
         
         # Add user context
-        results['user'] = current_user
+        results['user'] = current_user.username
         
         return jsonify(results)
     
     except Exception as e:
         logger.error(f"Music search error: {e}")
         return jsonify({
-            'error': f'Search failed: {str(e)}'
+            'error': 'Search failed. Please try again later.'
         }), 500
 
 
 @music_api_bp.route('/engines/status', methods=['GET'])
-@jwt_required()
-def music_engines_status():
+@jwt_required_with_user()
+def music_engines_status(current_user):
     """Get status of all music engines"""
     try:
         status = music_search_service.get_engine_status()
@@ -76,17 +76,17 @@ def music_engines_status():
     except Exception as e:
         logger.error(f"Engine status error: {e}")
         return jsonify({
-            'error': f'Failed to get engine status: {str(e)}'
+            'error': 'Failed to get engine status. Please try again later.'
         }), 500
 
 
 @music_api_bp.route('/playlists', methods=['GET', 'POST'])
-@jwt_required()
-def playlists():
+@jwt_required_with_user()
+def playlists(current_user):
     """
     Get user playlists or create new playlist
     """
-    current_user_id = get_jwt_identity()
+    current_user_id = current_user.id
     
     if request.method == 'GET':
         # Get user playlists
@@ -100,7 +100,7 @@ def playlists():
             })
         except Exception as e:
             logger.error(f"Get playlists error: {e}")
-            return jsonify({'error': str(e)}), 500
+            return jsonify({'error': 'Failed to retrieve playlists. Please try again later.'}), 500
     
     else:  # POST - Create playlist
         try:
@@ -131,14 +131,14 @@ def playlists():
         except Exception as e:
             logger.error(f"Create playlist error: {e}")
             db.session.rollback()
-            return jsonify({'error': str(e)}), 500
+            return jsonify({'error': 'Failed to create playlist. Please try again later.'}), 500
 
 
 @music_api_bp.route('/playlists/<int:playlist_id>', methods=['GET', 'PUT', 'DELETE'])
-@jwt_required()
-def playlist_detail(playlist_id):
+@jwt_required_with_user()
+def playlist_detail(playlist_id, current_user):
     """Get, update, or delete a specific playlist"""
-    current_user_id = get_jwt_identity()
+    current_user_id = current_user.id
     
     # Get playlist
     playlist = Playlist.query.get_or_404(playlist_id)
@@ -176,7 +176,7 @@ def playlist_detail(playlist_id):
         except Exception as e:
             logger.error(f"Update playlist error: {e}")
             db.session.rollback()
-            return jsonify({'error': str(e)}), 500
+            return jsonify({'error': 'Failed to update playlist. Please try again later.'}), 500
     
     else:  # DELETE
         # Only owner can delete
@@ -191,14 +191,14 @@ def playlist_detail(playlist_id):
         except Exception as e:
             logger.error(f"Delete playlist error: {e}")
             db.session.rollback()
-            return jsonify({'error': str(e)}), 500
+            return jsonify({'error': 'Failed to delete playlist. Please try again later.'}), 500
 
 
 @music_api_bp.route('/playlists/<int:playlist_id>/tracks', methods=['POST', 'DELETE'])
-@jwt_required()
-def playlist_tracks(playlist_id):
+@jwt_required_with_user()
+def playlist_tracks(playlist_id, current_user):
     """Add or remove tracks from playlist"""
-    current_user_id = get_jwt_identity()
+    current_user_id = current_user.id
     
     # Get playlist
     playlist = Playlist.query.get_or_404(playlist_id)
@@ -252,7 +252,7 @@ def playlist_tracks(playlist_id):
         except Exception as e:
             logger.error(f"Add track error: {e}")
             db.session.rollback()
-            return jsonify({'error': str(e)}), 500
+            return jsonify({'error': 'Failed to add track. Please try again later.'}), 500
     
     else:  # DELETE
         # Remove track
@@ -297,22 +297,22 @@ def playlist_tracks(playlist_id):
         except Exception as e:
             logger.error(f"Remove track error: {e}")
             db.session.rollback()
-            return jsonify({'error': str(e)}), 500
+            return jsonify({'error': 'Failed to remove track. Please try again later.'}), 500
 
 
 @music_api_bp.route('/tracks/<int:track_id>', methods=['GET'])
-@jwt_required()
-def track_detail(track_id):
+@jwt_required_with_user()
+def track_detail(track_id, current_user):
     """Get track details including sources and metadata"""
     track = Track.query.get_or_404(track_id)
     return jsonify(track.to_dict(include_sources=True, include_audio_features=True))
 
 
 @music_api_bp.route('/profile/preferences', methods=['GET', 'POST'])
-@jwt_required()
-def user_music_preferences():
+@jwt_required_with_user()
+def user_music_preferences(current_user):
     """Get or update user music preferences"""
-    current_user_id = get_jwt_identity()
+    current_user_id = current_user.id
     
     if request.method == 'GET':
         # Get user preferences
@@ -354,12 +354,13 @@ def user_music_preferences():
         except Exception as e:
             logger.error(f"Update preferences error: {e}")
             db.session.rollback()
-            return jsonify({'error': str(e)}), 500
+            return jsonify({'error': 'Failed to update preferences. Please try again later.'}), 500
 
 
 # Health check endpoint
 @music_api_bp.route('/health', methods=['GET'])
-def music_health():
+@jwt_required_with_user(optional=True)
+def music_health(current_user=None):
     """Music API health check"""
     return jsonify({
         'service': 'music_api',

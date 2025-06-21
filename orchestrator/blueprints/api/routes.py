@@ -5,6 +5,7 @@ API Blueprint - Provides programmatic access to search functionality
 import requests
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
+from orchestrator.utils.auth import jwt_required_with_user
 import yaml
 import os
 
@@ -18,12 +19,11 @@ with open(config_path, 'r') as f:
 SEARXNG_BASE_URL = config['SEARXNG']['CORE_URL']
 
 @api_bp.route('/search', methods=['GET', 'POST'])
-@jwt_required()
-def api_search():
+@jwt_required_with_user()
+def api_search(current_user):
     """
     API endpoint for search with authentication
     """
-    current_user = get_jwt_identity()
     
     # Get search parameters
     if request.method == 'POST':
@@ -63,7 +63,7 @@ def api_search():
         if resp.status_code == 200:
             return jsonify({
                 'success': True,
-                'user': current_user,
+                'user': current_user.username,
                 'query': query,
                 'results': resp.json() if format_type == 'json' else resp.text
             })
@@ -79,8 +79,8 @@ def api_search():
         }), 500
 
 @api_bp.route('/engines', methods=['GET'])
-@jwt_required()
-def api_engines():
+@jwt_required_with_user()
+def api_engines(current_user):
     """
     Get available search engines
     """

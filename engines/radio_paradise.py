@@ -98,7 +98,7 @@ def response(resp):
         # Extract basic info
         artist = song.get('artist', '')
         title = song.get('title', '')
-        album = song.get('album', '')
+        album = song.get('album', '') or ''
         
         # Filter by search query
         if search_query:

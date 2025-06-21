@@ -25,6 +25,8 @@ load_dotenv()
 # Import security configuration
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config.security import security_config, apply_security_headers
+from orchestrator.utils.error_handlers import register_error_handlers
+from orchestrator.utils.rate_limit import register_rate_limits
 
 # Configure logging based on environment
 log_level = os.getenv('LOG_LEVEL', 'INFO')
@@ -129,7 +131,14 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)  # Correctly initialize Migrate here
     jwt.init_app(app)
-    cors = CORS(app, origins=config['CORS']['ORIGINS'])
+    # Configure CORS with proper security settings
+    allowed_origins = os.getenv('CORS_ORIGINS', 'http://localhost:3000,http://localhost:8095').split(',')
+    cors = CORS(app, 
+                origins=[origin.strip() for origin in allowed_origins],
+                supports_credentials=True,
+                allow_headers=['Content-Type', 'Authorization'],
+                methods=['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+                max_age=3600)
     
     # Initialize SocketIO with Redis message queue for production
     redis_url = config['REDIS']['REDIS_URL']
@@ -221,10 +230,18 @@ def create_app():
     # --- 5. Register Routes ---
     register_routes(app)
     
-    # --- 6. SocketIO Events are now registered in the WebSocket blueprint ---
+    # --- 6. Register Global Error Handlers ---
+    register_error_handlers(app)
+    logger.info("✅ Global error handlers registered")
+    
+    # --- 7. Register Rate Limiting ---
+    register_rate_limits(app)
+    logger.info("✅ Rate limiting configured")
+    
+    # --- 8. SocketIO Events are now registered in the WebSocket blueprint ---
     # register_socketio_events() - Moved to WebSocket blueprint
     
-    # --- 7. Apply security headers to all responses ---
+    # --- 9. Apply security headers to all responses ---
     @app.after_request
     def add_security_headers(response):
         """Apply security headers to all responses"""
@@ -335,7 +352,7 @@ def register_routes(app):
             return response
         except Exception as e:
             logger.error(f"Fallback proxy error: {e}")
-            return jsonify({'error': f'Proxy error: {str(e)}'}), 500
+            return jsonify({'error': 'Proxy request failed'}), 500
 
 def register_socketio_events():
     """Register SocketIO event handlers"""
